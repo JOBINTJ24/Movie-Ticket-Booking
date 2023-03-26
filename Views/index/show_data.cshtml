@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "show_data";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>show data</title>
+   
+</head>
+<body>
+    <div class="table-responsive">
+        <table class="table table-striped">
+     
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th> Last name</th>
+                    <th> Date of birth</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Username</th>
+                    <th>password</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (System.Data.DataRow dr in ViewBag.customer.Rows)
+                    {
+
+                        <tr>
+                            <td>@dr["id"]</td>
+                            <td>@dr["firstname"]</td>
+                            <td>@dr["lastname"]</td>
+                            <td>@dr["dateofbirth"]</td>
+                            <td>@dr["gender"]</td>
+                            <td>@dr["phonenumber"]</td>
+                            <td>@dr["email"]</td>
+                            <td>@dr["address"]</td>
+                            <td>@dr["city"]</td>
+                            <td>@dr["username"]</td>
+                            <td>@dr["password"]</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+</html>
+

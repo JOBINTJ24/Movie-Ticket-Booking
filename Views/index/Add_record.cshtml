@@ -1,0 +1,165 @@
+﻿
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/index.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <h2>
+
+
+            <div class="logo">
+                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+
+
+            </div>
+
+        </h2>
+        <div class="tag">
+            <a href="/Home/Index" tex>Home</a>
+            <a href="/Home/About">About</a>
+            <a href="/index/customerlogin" tex>Sign in</a>
+            <a href="/index/Add_record">Sign up</a>
+
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+    </header>
+    <style>
+        body {
+            background-image: url('../../content/images/119738.jpg');
+            
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 480px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        
+            
+        }
+
+            .form-container h2 {
+                text-align: center;
+               
+                
+            }
+
+            .form-container label {
+                display: block;
+                
+            }
+
+            .form-container input[type=text], input[type=date], input[type=password],
+            .form-container select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            .form-container input[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+               
+            }
+
+                .form-container input[type=submit]:hover {
+                    background-color: #45a049;
+                }
+
+        .alert-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+    </style>
+  
+    <body>
+        <div class="form-container">
+            <h2>Sign up</h2>
+            <form method="POST">
+                <label for="fname">Fast name:</label>
+                <input type="text" id="sname" name="firstname" required>
+
+                <label for="lname">Last name:</label>
+                <input type="text" id="email" name="lastname" required>
+
+                <label for="dob">Date of birth:</label>
+                <input type="text" id="dob" name="dateofbirth" onfocus="(this.type='date')" required>
+
+                <label for="dob">Gender</label>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="City" name="city" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="password">Conform password:</label>
+                <input type="password" id="password" required>
+
+
+
+                <label></label>
+                <input type="submit" value="Submit"><br />
+                <div class="signin">Already have an account? <a href="/index/customerlogin">Sign in</a></div>
+            </form>
+        </div>
+
+        <div>
+            @{
+                if (TempData["msg"] != null)
+                {
+                    <script> alert(@TempData["msg"] = "inserted";) </script>
+                }
+            }
+        </div>
+    </body>
+    <footer>
+        <p>copyright@2023</p>
+    </footer>
+
+</html>
+

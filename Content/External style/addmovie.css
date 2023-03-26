@@ -1,0 +1,179 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #494545;
+    padding: 2px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    margin-left: -10px;
+    margin-top: -10px;
+    position: fixed;
+}
+
+    header h2 {
+        display: inline-block;
+        margin-left: -100px;
+    }
+
+    header a {
+        display: inline-block;
+        margin-left: 30px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+/* Style the footer */
+footer {
+    background-color: #494545;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    margin-top: 1%;
+    width: 100%;
+    position: fixed;
+}
+
+.tag {
+    display: inline-block;
+    margin-left: 500px;
+}
+
+form {
+    border: 1px solid #f1f1f1;
+}
+
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=date ], input[type=file ] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    height: 15%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 60px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #1cb3ce;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+img {
+    border-radius: 100px;
+    margin-left: -150px;
+}
+
+/* Add padding to containers */
+
+
+
+label {
+    color: rgba(51, 48, 48, 0.527);
+}
+
+.formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    background-color: rgba(15, 124, 93, 0.685);
+    border: none;
+    background-color: #13a02a;
+    border-radius: 10px;
+    z-index: 9;
+    height: 10%;
+    width: 20%;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(20, 153, 71, 0.685);
+}
+
+.container {
+    display: inline-block;
+    margin-top: 140px;
+    margin-left: 300px;
+    width: 900px;
+    height: 400px;
+    background-color: rgb(75, 69, 70);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.sidenav {
+    margin-top: 108px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #b9b7b7;
+    padding-top: 40px;
+}
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #0e0909;
+        display: block;
+    }
+
+        .sidenav a:hover {
+            color: #130404;
+        }
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }

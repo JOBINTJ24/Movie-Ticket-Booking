@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/bookmovie.css" rel="stylesheet" />
+</head>
+
+
+
+<header>
+    <h2>
+
+
+        <div class="logo">
+            <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+            <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+
+
+        </div>
+
+    </h2>
+    <div class="tag">
+        <a href="/Home/Index" tex>Home</a>
+        <a href="/Home/About">About</a>
+        <a href="/index/customerlogin" tex>Sign in</a>
+        <a href="/index/Add_record">Sign up</a>
+
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+</header>
+<style>
+    body {
+        background-image: url('../../content/images/119738.jpg');
+    }
+
+    .form-container {
+        max-width: 700px;
+        margin: 0 auto;
+        width: 200%;
+        height: 200%;
+        padding: 100px;
+        background-color: #DEDB23;
+        border-radius: 10px;
+        margin-top: 100px;
+        margin-bottom: 120px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2> </h2>
+        <form method="POST">
+            <table>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Date</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Language</th>
+                    <th>Action</th>
+
+                </tr>
+                @{
+                    foreach (System.Data.DataRow dd in ViewBag.movies.Rows)
+                    {
+                        <tr>
+                            <td>@dd["id"]</td>
+                            <td>@dd["movie_name"]</td>
+                            <td>@dd["description"]</td>
+                            <td><img src="@Url.Content(dd["movie_image"].ToString())" style="width:30px;height:30px;margin-left:20px" /></td>
+
+                            <td>@dd["streaming_date"]</td>
+                            <td>@dd["genre"]</td>
+                            <td>@dd["duration"]</td>
+                            <td>@dd["language"]</td>
+                            <td>
+                                <a href="#" style="color: #fff;text-decoration: none;font-weight:bold;">Book now</a>
+
+
+
+                            </td>
+
+
+                        </tr>
+
+                    }
+                }
+
+
+            </table>
+        </form>
+    </div>
+
+
+    <footer>
+        <p> copyright@2023</p>
+    </footer>
+
+</body>
+
+</html>

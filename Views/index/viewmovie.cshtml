@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/Content/External style/viewmovie.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+
+    <header>
+        <h2>
+
+            <div class="logo">
+                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left: -1100px;">
+            </div>
+
+        </h2>
+
+    </header>
+
+
+    <div class="sidenav" style="display: inline-block;">
+        <a href="/Home/adminhome">Home</a><br>
+        <a href="/index/addmovies">Add movies</a><br>
+        <a href="/index/viewmovie">View movies</a><br>
+
+        <a href="#">View Customers</a><br>
+        <a href="#contact">Booked movie</a><br>
+        <a href="#contact" style="margin-top: 130px;">Logout</a>
+    </div>
+    <form method="post">
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Date</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Language</th>
+                    <th>Action</th>
+
+                </tr>
+                @{
+                    foreach (System.Data.DataRow dd in ViewBag.movies.Rows)
+                    {
+                        <tr>
+                            <td>@dd["id"]</td>
+                            <td>@dd["movie_name"]</td>
+                            <td>@dd["description"]</td>
+                            <td><img src="@Url.Content(dd["movie_image"].ToString())" style="width:30px;height:30px;margin-left:20px" /></td>
+
+                            <td>@dd["streaming_date"]</td>
+                            <td>@dd["genre"]</td>
+                            <td>@dd["duration"]</td>
+                            <td>@dd["language"]</td>
+                            <td>
+                                <a href="/index/updatemovie?id=@dd["id"]" style="color: #fff;text-decoration: none;font-weight:bold;">update</a>
+
+                                <a href="/index/deletemovie?id=@dd["id"]" style="color: #fff;text-decoration: none;font-weight:bold;">Delete</a>
+
+
+                            </td>
+
+
+                        </tr>
+
+                    }
+                }
+
+
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+<footer>
+    <p>copyright@2023</p>
+</footer>
+
+</body>
+
+
+</html>
+
+

@@ -1,0 +1,143 @@
+﻿
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/index.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header style="height:100px;">
+        <h2>
+
+
+            <div class="logo">
+                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+            </div>
+         
+
+        </h2>
+        <div class="tag">
+            <a href="/Home/Index" tex>Home</a>
+            <a href="/Home/About">About</a>
+            <a href="/index/customerlogin" tex>Sign in</a>
+            <a href="/index/Add_record">Sign up</a>
+
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+    </header>
+    <style>
+        body {
+            background-image: url('../../content/images/119738.jpg');
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 480px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .form-container label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .form-container input[type=text], input[type=date], input[type=password],
+            .form-container select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            .form-container input[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left:170px;
+            }
+
+                .form-container input[type=submit]:hover {
+                    background-color: #45a049;
+                }
+
+        .alert-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+        .singn {
+            margin-left: 380px;
+            margin-top:-10px;
+        }
+    </style>
+
+    <body>
+        <div class="form-container">
+            <h2>Sign in</h2>
+            <form method="POST">
+
+                <label for="email">username:</label>
+                <input type="text" id="email" name="username" required>
+
+
+
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"  required>
+
+
+
+
+                <label></label>
+                <input type="submit" value="Submit"><br />
+                <a href="#">forgot password</a>
+                <div class="singn">
+                    <a href="/index/Add_record">sign up</a>
+
+                </div>
+            </form>
+        </div>
+
+        <div>
+            @{
+                if (TempData["msg"] != null)
+                {
+                    <script> alert(@TempData["msg"] = "inserted";) </script>
+                }
+            }
+        </div>
+    </body>
+    <footer>
+        <p>copyright@2023</p>
+    </footer>
+
+</html>
+
