@@ -244,6 +244,13 @@ namespace ticket_booking_system.Controllers
 
 
         }
+        public ActionResult contactinformation()
+        {
+            return View();
+
+
+        }
+
 
 
 

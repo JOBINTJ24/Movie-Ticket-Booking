@@ -151,6 +151,7 @@
     <Content Include="Content\External style\addmovie.css" />
     <Content Include="Content\External style\admin.css" />
     <Content Include="Content\External style\bookmovie.css" />
+    <Content Include="Content\External style\contactinformation.css" />
     <Content Include="Content\External style\index.css" />
     <Content Include="Content\External style\viewmovie.css" />
     <Content Include="Content\Images\119738.jpg" />
@@ -204,6 +205,7 @@
     <Content Include="Views\index\customerlogin.cshtml" />
     <Content Include="Views\index\userhome.cshtml" />
     <Content Include="Views\index\bookmovie.cshtml" />
+    <Content Include="Views\index\contactinformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

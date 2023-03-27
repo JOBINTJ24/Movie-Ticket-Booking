@@ -14,8 +14,6 @@ header {
     text-align: center;
     font-size: 20px;
     color: white;
-   
-    
 }
 
     header h2 {
@@ -42,7 +40,7 @@ footer {
     padding: 30px;
     text-align: center;
     color: white;
-    margin-top:2px;
+    margin-top: 15px;
 }
 
 .tag {
