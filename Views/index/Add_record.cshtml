@@ -7,31 +7,24 @@
 <html lang="en">
 <head>
     <title></title>
+    
     <link href="~/Content/External style/index.css" rel="stylesheet" />
+    <script src="~/Content/External style/js/signup.js"></script>
 </head>
 <body>
-
     <header>
         <h2>
-
-
             <div class="logo">
                 <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
                 <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
-
-
             </div>
-
         </h2>
         <div class="tag">
             <a href="/Home/Index" tex>Home</a>
             <a href="/Home/About">About</a>
             <a href="/index/customerlogin" tex>Sign in</a>
             <a href="/index/Add_record">Sign up</a>
-
-
             <a href="/index/contactinformation">Contact</a>
-
         </div>
     </header>
     <style>
@@ -80,6 +73,7 @@
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
+                margin-left:180px;
                
             }
 
@@ -98,56 +92,83 @@
             box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
         }
     </style>
-  
     <body>
         <div class="form-container">
             <h2>Sign up</h2>
-            <form method="POST">
-                <label for="fname">Fast name:</label>
-                <input type="text" id="sname" name="firstname" required>
+            <form method="post" onsubmit="return formvalidate();">
+
+                <label for="fname">First name:</label>
+                <input type="text" id="nme" name="firstname" onblur="return formvalidate()" onKeyUp="return formvalidate()" onfocusout="formvalidate()">
+                <span id="fns" style="color: red;"></span>
+
 
                 <label for="lname">Last name:</label>
-                <input type="text" id="email" name="lastname" required>
+                <input type="text" id="lnme" name="lastname" onblur="return formvalidatelname()" onKeyUp="return formvalidatelname()" onfocusout="formvalidatelname()">
+                <span id="kn" style="color: red;"></span>
+
 
                 <label for="dob">Date of birth:</label>
-                <input type="text" id="dob" name="dateofbirth" onfocus="(this.type='date')" required>
+                <input type="text" id="dob" name="dateofbirth" max="2023-04-20" onchange="return formvalidateldob()" onfocus="(this.type='date')" onfocusout="formvalidateldob()">
+                <span id="dd" style="color: red;"></span>
 
                 <label for="dob">Gender</label>
                 <input type="radio" name="gender" value="male"> Male
                 <input type="radio" name="gender" value="female"> Female
 
                 <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" required>
+                <input type="text" id="phl" name="phone" minlength="10" maxlength="10" onblur="return formvalidatephone()" onKeyUp="return formvalidatephone()" onfocusout="formvalidatephone()">
+                <span id="pp" style="color: red;"></span>
+
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="eemail" name="email" onblur="return formvalidateemail()" onKeyUp="return formvalidateemail()" onfocusout="formvalidateemail()">
+                <span id="ela" style="color: red;"></span>
+
 
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="hnamee" name="address" onblur="return formvalidatehname()" onKeyUp="return formvalidatehname()" onfocusout="formvalidatehname()">
+                <span id="hho" style="color: red;"></span>
+
 
                 <label for="state">State:</label>
-                <input type="text" id="state" name="state" required>
+                <select name="state" id="state" onchange="populateDistricts()" required>
+                    <option value="">Select state</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Karnadaka">Karnadaka</option>
+                    
+
+                </select>
+                <span id="sss" style="color: red;"></span>
+
 
                 <label for="city">City:</label>
-                <input type="text" id="City" name="city" required>
+                <select name="city" id="district" required>
+                    <option value="">Select city</option>
+                </select>
+                <span id="district_error" style="color:#fff;"></span>
+                <span id="kkk" style="color: red;"></span>
+
 
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="usenamee" name="username" onblur="return formvalidateuser()" onKeyUp="return formvalidateuser()" onfocusout="formvalidateuser()">
+                <span id="skyy" style="color: red;"></span>
+
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="password">Conform password:</label>
-                <input type="password" id="password" required>
+                <input type="password" id="pcode" name="password" onblur="return formvalidatepasd()" onKeyUp="return formvalidatepasd()" onfocusout="formvalidatepasd()">
+                <span id="mmm" style="color: red;"></span>
 
 
+                <label for="password">Conform-password:</label>
+                <input type="password" id="cpassword" onblur="return formvalidatecpasd()" onKeyUp="return formvalidatecpasd()" onfocusout="formvalidatecpasd()">
+                <span id="cpss" style="color: red;"></span>
 
                 <label></label>
                 <input type="submit" value="Submit"><br />
-                <div class="signin">Already have an account? <a href="/index/customerlogin">Sign in</a></div>
+                <div class="signin" style="margin-left:200px;">Already have an account? <a href="/index/customerlogin">Sign in</a></div>
             </form>
         </div>
-
         <div>
             @{
                 if (TempData["msg"] != null)

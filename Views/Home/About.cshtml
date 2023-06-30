@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -8,79 +9,106 @@
     <title></title>
     <link href="~/Content/External style/about.css" rel="stylesheet" />
 </head>
+<header>
+    <h2>
+        <div class="logo">
+            <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+            <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+        </div>
+    </h2>
+    <div class="tag">
+        <a href="/Home/Index" tex>Home</a>
+        <a href="/Home/About">About</a>
+        <a href="/index/customerlogin" tex>Sign in</a>
+        <a href="/index/Add_record">Sign up</a>
+        <a href="/index/contactinformation">Contact</a>
+    </div>
+</header>
 
-    
 
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+    }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    h1, h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: disc;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        background-color: #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
     <header>
-        <h2>
-
-
-            <div class="logo">
-                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
-                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
-
-
-            </div>
-
-        </h2>
-        <div class="tag">
-            <a href="/Home/Index" tex>Home</a>
-            <a href="/Home/About">About</a>
-            <a href="/index/customerlogin" tex>Sign in</a>
-            <a href="/index/Add_record">Sign up</a>
-
-
-            <a href="/index/contactinformation">Contact</a>
-
-        </div>
+        
     </header>
-    <style>
-        body {
-            background-image: url('../../content/images/119738.jpg');
-        }
+    <main>
+        <section>
+            <h1>About us</h1>
+            <p>Welcome to Online Movie Ticket Booking, your one-stop destination for booking movie tickets online. Our mission is to provide a seamless and hassle-free movie booking experience to our customers.</p>
+            <p>Our vision is to be the go-to platform for movie lovers, offering the widest selection of movies, theaters, and showtimes.</p>
+        </section>
+        <section>
+            <h2>Our story</h2>
+            <p>We started Online Movie Ticket Booking in 2010 with the goal of making it easier for people to book movie tickets from the comfort of their homes. Our journey has been full of challenges, but we have always remained focused on our mission and vision.</p>
+            <p>Over the years, we have grown to become one of the leading online movie ticket booking platforms in the country. We have partnered with hundreds of theaters and cinemas, and have helped millions of people book tickets for their favorite movies.</p>
+        </section>
+        <section>
+            <h2>Our accomplishments</h2>
+            <ul>
+                <li>Won the "Best Online Ticketing Platform" award at the National Cinema Awards 2018</li>
+                <li>Partnered with over 500 cinemas and theaters across the country</li>
+                <li>Sold over 10 million movie tickets since our inception</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Online Movie Ticket Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            width: 700%;
-            height: 700%;
-            padding: 100px;
-            background-color: #DEDB23;
-            border-radius: 10px;
-            margin-top: 100px;
-            margin-bottom: 120px;
-            margin-left:300px;
-            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-        }
-       
-        </style>
-
-    <body>
-        <div class="form-container" style="display: inline-block;">
-            <h2> </h2>
-            <h3> <center>About</center></h3>
-            <form method="POST">
-                <p>
-
-                    Welcome to My show, the ultimate movie ticket booking platform for movie lovers everywhere. Our mission is to make it easy and convenient for you to book movie tickets from the comfort of your own home or on-the-go, so you can enjoy the latest blockbusters without the hassle of waiting in line at the theater.
-
-                    At MovieTix, we're passionate about movies, and we know that our customers are too. That's why we're committed to providing you with the best possible movie-going experience, with access to a wide range of movies, showtimes, and theater locations. With just a few clicks, you can browse movies, choose your seats, and purchase tickets for yourself or a group of friends.
-
-                    Our team is made up of experienced professionals who are dedicated to providing excellent customer service and support. If you have any questions or concerns, please don't hesitate to get in touch. You can reach us by phone, email, or through our website's live chat feature.
-
-                    At Myshow, we're also committed to protecting your privacy and security. All transactions are processed securely and your personal information is kept safe and confidential.
-
-                    Thank you for choosing MovieTix for your movie ticket booking needs. We hope you enjoy the show!
-                </p>
-            </form>
-        </div>
-      
-
-
-        <footer>
-            <p> copyright@2023</p>
-        </footer>
-
-    </body>
-
-        </html >

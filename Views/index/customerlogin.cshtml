@@ -3,34 +3,37 @@
 @{
     Layout = null;
 }
+@section scripts{
+    <script>
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title></title>
     <link href="~/Content/External style/index.css" rel="stylesheet" />
+    <script src="~/Content/External style/js/script.js"></script>
 </head>
 <body>
 
+
+
     <header style="height:100px;">
         <h2>
-
-
             <div class="logo">
                 <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
                 <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
             </div>
-         
-
         </h2>
         <div class="tag">
             <a href="/Home/Index" tex>Home</a>
             <a href="/Home/About">About</a>
             <a href="/index/customerlogin" tex>Sign in</a>
             <a href="/index/Add_record">Sign up</a>
-
-
             <a href="/index/contactinformation">Contact</a>
-
         </div>
     </header>
     <style>
@@ -76,7 +79,7 @@
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
-                margin-left:170px;
+                margin-left: 170px;
             }
 
                 .form-container input[type=submit]:hover {
@@ -93,35 +96,30 @@
             border-radius: 5px;
             box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
         }
+
         .singn {
             margin-left: 380px;
-            margin-top:-10px;
+            margin-top: -10px;
         }
     </style>
-
     <body>
         <div class="form-container">
             <h2>Sign in</h2>
-            <form method="POST">
+            <form method="POST" onsubmit="return formvalidate()">
 
-                <label for="email">username:</label>
-                <input type="text" id="email" name="username" required>
-
-
-
+                <label for="email">Username:</label>
+                <input type="text" id="email" name="username" onblur="return formvalidate()" onKeyUp="return formvalidate()" onfocusout="formvalidate()">
+                <span id="email_error" style="color: red;"></span>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password"  required>
-
-
-
+                <input type="password" id="password" name="password" id="password" onblur="return passwordform()" onfocusout="passwordform()" onKeyUp="return passwordform()">
+                <span id="password_error" style="color: red;"></span>
 
                 <label></label>
                 <input type="submit" value="Submit"><br />
-                <a href="#">forgot password</a>
+                <a href="#">Forgot password</a>
                 <div class="singn">
-                    <a href="/index/Add_record">sign up</a>
-
+                    <a href="/index/Add_record">Sign up</a>
                 </div>
             </form>
         </div>
@@ -134,6 +132,7 @@
                 }
             }
         </div>
+
     </body>
     <footer>
         <p>copyright@2023</p>

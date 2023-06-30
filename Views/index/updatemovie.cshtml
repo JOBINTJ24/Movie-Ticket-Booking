@@ -3,8 +3,6 @@
     Layout = null;
 }
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +10,19 @@
 </head>
 
 <body>
-
-
     <header>
         <h2>
             <div class="logo">
-
-                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left: -1100px;">
+                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left: 100px;">
             </div>
-
         </h2>
+        <h2 style="margin-left:1100px;">Admin</h2>
 
     </header>
-
-
     <div class="sidenav" style="display: inline-block;">
         <a href="/Home/adminhome">Home</a><br>
         <a href="/index/addmovies">Add movies</a><br>
         <a href="/index/viewmovie">View movies</a><br>
-
         <a href="#clients">View Customers</a><br>
         <a href="#contact">Booked movie</a><br>
         <a href="#contact" style="margin-top: 130px;">Logout</a>
@@ -43,7 +35,7 @@
                         <input type="text" value="@dd["movie_name"]" class="text-field" name="movie_name" placeholder="Movie name">
                         <input type="text" value="@dd["description"]" class="text-field" name="description" placeholder="Movie description">
                         <input type="text" value="@dd["streaming_date"]" class="text-field" name="streaming_date" placeholder="Streaming date" onfocus="(this.type='date')">
-                       <input type="text" value="@dd["genre"]" class="text-field" name="genre" placeholder="Genre">
+                        <input type="text" value="@dd["genre"]" class="text-field" name="genre" placeholder="Genre">
                         <input type="text" value="@dd["duration"]" class="text-field" name="duration" placeholder="Duration">
                         <input type="text" value="@dd["language"]" class="text-field" name="language" style="margin-left: 30%;" placeholder="Language">
                         <button type="submit" style="width: 30%; margin-left: 35%;" ;>Submit</button>
@@ -53,16 +45,10 @@
     }
 </body>
 </html>
-
-
-
 <footer>
     <p>copyright@2023</p>
 </footer>
-
 </body>
-
-
 </html>
 
 

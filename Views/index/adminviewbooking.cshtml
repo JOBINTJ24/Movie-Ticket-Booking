@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/Content/External style/viewmovie.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h2>
+            <div class="logo">
+                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left: -1100px;">
+                <h4 style="margin-top:-70px;margin-left:1200px;">Admin</h4>
+            </div>
+        </h2>
+    </header>
+    <div class="sidenav" style="display: inline-block;">
+        <a href="/Home/adminhome">Home</a><br>
+        <a href="/index/addmovies">Add movies</a><br>
+        <a href="/index/viewmovie">View movies</a><br>
+        <a href="/index/show_data">View customers</a><br>
+        <a href="/index/adminviewbooking">Booked movie</a><br>
+        <a href="/index/Logout" style="margin-top: 130px;">Logout</a>
+
+    </div>
+    <form method="post">
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Date</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Language</th>
+                   
+                </tr>
+                @{
+                    foreach (System.Data.DataRow dd in ViewBag.bookedmovie.Rows)
+                    {
+                                <tr>
+
+                                    @{
+                                        int id = Convert.ToInt32(dd["movieid"]);
+                                        int movie = 0;
+                                        string movie_name = "Unknown";
+                                        string description = "Unknown";
+                                        string movie_image = "Unknown";
+                                        string streaming_date = "Unknown";
+                                        string genre = "Unknown";
+                                        string duration = "Unknown";
+                                        string language = "Unknown";
+
+                                        foreach (System.Data.DataRow booked in ViewBag.allmovie.Rows)
+                                        {
+                                            if (Convert.ToInt32(booked["id"]) == id)
+                                            {
+                                                movie_name = booked["movie_name"].ToString();
+                                                description = booked["description"].ToString();
+                                                movie_image = booked["movie_image"].ToString();
+                                                streaming_date = booked["streaming_date"].ToString();
+                                                genre = booked["genre"].ToString();
+                                                duration = booked["duration"].ToString();
+                                                language = booked["language"].ToString();
+                                                movie = Convert.ToInt32(booked["id"]);
+
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    <td>@id</td>
+                                    <td>@movie_name</td>
+                                    <td>@description</td>
+
+                                    <td><img src="@Url.Content(@movie_image.ToString())" style="width:30px;height:30px;margin-left:20px" /></td>
+
+                                    <td>@streaming_date</td>
+                                    <td>@genre</td>
+                                    <td>@duration</td>
+
+                                    <td>@language</td>
+                                    <td></td>
+                                    
+                                </tr>
+
+                    }
+                }
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+<footer>
+    <p>copyright@2023</p>
+</footer>
+</body>
+</html>
+
+

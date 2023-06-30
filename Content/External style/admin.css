@@ -132,17 +132,34 @@ label {
     margin-top: 200px;
     margin-left: 300px;
     width: 200px;
+    text-align: center;
     height: 200px;
-    background-color: rgb(166, 255, 0);
+    border-radius: 50px;
+    background-color: rgb(255, 99, 71);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .addmovie2 {
     display: inline-block;
     margin-top: 200px;
-    margin-left: 50px;
+    margin-left: 400px;
+    text-align: center;
     width: 200px;
     height: 200px;
-    background-color: rgb(25, 0, 255);
+    background-color: rgb(238, 130, 238);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .sidenav {
     margin-top: 108px;
@@ -183,3 +200,5 @@ label {
             font-size: 18px;
         }
 }
+
+

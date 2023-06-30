@@ -37,7 +37,7 @@ footer {
     padding: 30px;
     text-align: center;
     color: white;
-    margin-top: 1%;
+    margin-top: 550px;
     width: 100%;
     position: fixed;
 }
@@ -121,7 +121,12 @@ label {
     width: 900px;
     height: 400px;
     background-color: rgb(75, 69, 70);
+    position:fixed;
 }
+
+
+
+
 
 table {
     font-family: arial, sans-serif;

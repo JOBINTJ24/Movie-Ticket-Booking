@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/userprofile.css" rel="stylesheet" />
+</head>
+<body>
+    <header style="height:100px;">
+        <h2>
+            <div class="logo" style="margin-right:-80px;">
+                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+            </div>
+        </h2>
+        <div class="tag">
+            <a href="/index/userhome" tex>Home</a>
+          
+            <a href="/index/bookingconformation">Book now</a>
+            <a href="/index/Logout" tex>logout</a>
+            <a href="/index/UserViewbooking">Booked movies</a>
+            <a href="/index/userprofile">@ViewBag.Username</a>
+        </div>
+    </header>
+    <div class="cll">
+        <img src="~/Content/Images/userimage.png" style="width: 100px; height: 100px; margin-top: -100px; margin-left:30px;" />
+    </div>
+    @{
+        foreach (System.Data.DataRow dr in ViewBag.user.Rows)
+        {
+
+            <div style="margin-left:550px; margin-top:-400px;">
+                <label>Username :</label>@dr["username"]<br>
+                <label>Name :</label>@dr["firstname"] @dr["lastname"]<br>
+                <label>Gender :</label>@dr["gender"]<br>
+                <label>Email :</label>@dr["email"]<br>
+                <label>Phone :</label>@dr["phonenumber"]<br>
+                <label>Address:</label>@dr["address"]<br>
+                <label>City :</label>@dr["city"]<br>
+
+                </div">
+            }
+    }
+</body>
+</html>
+
+

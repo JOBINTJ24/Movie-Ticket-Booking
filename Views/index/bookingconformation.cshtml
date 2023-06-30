@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/bookconformation.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header style="height:100px;">
+        <h2>
+            <div class="logo" style="margin-right:-80px;">
+                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+            </div>
+        </h2>
+        <div class="tag">
+            <a href="/index/userhome" tex>Home</a>
+            <a href="/index/bookingconformation">Book now</a>
+            <a href="/index/UserViewbooking">Booked movies</a>
+            <a href="/index/userprofile">@ViewBag.Username</a>
+            <a href="/index/Logout" tex>logout</a>
+
+
+        </div>
+    </header>
+        <table>
+
+            <tr>
+                <td>
+                    @{
+                        foreach (System.Data.DataRow dd in ViewBag.movies.Rows)
+                        {
+                                        <div class="cll" style="display:inline-block;margin-left:15px; margin-top:20px;">
+                                            <img src="@Url.Content(dd["movie_image"].ToString())" style="width: 300px; height: 200px; margin-left: -50px;margin-top:-40px; " />
+                                            <table style="margin-left:30px;">
+                                                <tr><td>Name: @dd["movie_name"]</td></tr>
+                                                <tr><td>Genre:@dd["genre"]</td></tr>
+                                                <tr><td>Duration:@dd["duration"]</td></tr>
+                                                <tr><td>Language: @dd["language"]</td></tr>
+                                                <tr><td>Date:@dd["streaming_date"]</td></tr>                                   
+                                            </table>
+                                            <div class="book">
+                                                <a href="/Index/Book_Movie_Byuser?id=@dd["id"]" class="button">Book</a>
+                                            </div>
+                                      </div>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+</body>
+<footer>
+    <p>&copy; 2023 Online Movie Ticket Booking. All rights reserved.</p>
+</footer>
+
+</html>
+
+

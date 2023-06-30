@@ -2,69 +2,66 @@
 @{
     Layout = null;
 }
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="~/Content/External style/addmovie.css" rel="stylesheet" />
+    <script src="~/Content/External style/js/addmovies.js"></script>
 </head>
 
 <body>
-
-
     <header>
         <h2>
             <div class="logo">
-
-                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left: -1100px;">
+                <img src="~/Content/Images/logo.png" width="50px" height="50px" style="margin-left:100px;">
             </div>
 
         </h2>
+        <h2 style="margin-left:1100px;">Admin</h2>
 
     </header>
-
-
     <div class="sidenav" style="display: inline-block;">
         <a href="/Home/adminhome">Home</a><br>
         <a href="/index/addmovies">Add movies</a><br>
         <a href="/index/viewmovie">View movies</a><br>
-
-        <a href="/index/show_data">View Customers</a><br>
-        <a href="#contact">Booked movie</a><br>
-        <a href="#contact" style="margin-top: 130px;">Logout</a>
+        <a href="/index/show_data">View customers</a><br>
+        <a href="/index/adminviewbooking">Booked movie</a><br>
+        <a href="/index/Logout" style="margin-top: 130px;">Logout</a>
+       
     </div>
-    <form method="post" enctype="multipart/form-data">
-        <div class="container">
-            <input type="text" class="text-field" name="movie_name" placeholder="Movie name">
-            <input type="text" class="text-field" name="description" placeholder="Movie description">
-            <input type="text" class="text-field" name="image" placeholder="Movie image" onfocus="(this.type='file')">
-            <input type="text" class="text-field" name="streaming_date" placeholder="Streaming date" onfocus="(this.type='date')">
-            <input type="text" class="text-field" name="genre" placeholder="Genre">
-            <input type="text" class="text-field" name="duration" placeholder="Duration">
-            <input type="text" class="text-field" name="language" style="margin-left: 30%;" placeholder="Language">
-            <button type="submit" style="width: 30%; margin-left: 35%;" ;>Submit</button>
+    <form method="post" enctype="multipart/form-data" onsubmit="return formvalidate();">
+         <div class="container">
+                <input type="text" class="text-field" id="movie name" name="movie_name" placeholder="Movie name" onblur="return formvalidate()" onKeyUp="return formvalidate()" onfocusout="formvalidate()" >
+                <span id="error_name" style="color: red; margin-left:50px;"></span>
 
+                <input type="text" class="text-field" id="movie description" name="description" placeholder="Movie description" onblur="return formvalidatelname()" onKeyUp="return formvalidatelname()" onfocusout="formvalidatelname()">
+                <span id="error_description" style="color: red; margin-left: 600px;"></span>
 
+                <input type="text" id="movie image" class="text-field" name="image" placeholder="Movie image" onfocus="(this.type='file')" onblur="return formvalidateemail()" onchange="return formvalidateemail()" onKeyUp="return formvalidateemail()" onfocusout="formvalidateemail()">
+                <span id="error_image" style="color: red; margin-left: 50px;" ></span>
 
+                <input type="text" id="streaming date" class="text-field" name="streaming_date" placeholder="Streaming date" onfocus="(this.type='date')" onblur="return formvalidatehname()" onKeyUp="return formvalidatehname()" onfocusout="formvalidatehname()">
+                <span id="error_date" style="color: red; margin-left: 600px;"></span>
 
+                <input type="text" id="movie genre" class="text-field" name="genre" placeholder="Genre" onblur="return formvalidatestrename()" onKeyUp="return formvalidatestrename()" onfocusout="formvalidatestrename()">
+                <span id="error_genre" style="color: red; margin-left: 50px;"></span>
 
-        </div>
-    </form>
-</body>
-</html>
+                <input type="text" id="movie duration" class="text-field" name="duration" placeholder="Duration" onblur="return formvalidatecity()" onKeyUp="return formvalidatecity()" onfocusout="formvalidatecity()">
+                <span id="error_duration" style="color: red; margin-left: 600px;"></span>
 
+                <input type="text" id="movie language" class="text-field" name="language" style="margin-left: 30%;" placeholder="Language" onblur="return formvalidateuser()" onKeyUp="return formvalidateuser()" onfocusout="formvalidateuser()">
+                 <span id="error_language" style="color: red; margin-left: 50px;"></span>
 
-
-<footer>
-    <p>copyright@2023</p>
-</footer>
-
-</body>
-
-
-</html>
+                <button type="submit" style="width: 30%; margin-left: 35%;" ;>Submit</button>
+            </div>
+        </form>
+    </body>
+    </html>
+    <footer>
+        <p>copyright@2023</p>
+    </footer>
+    </body>
+    </html>
 
 
 

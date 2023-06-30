@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="~/Content/External style/userbookedmovies.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header style="height:100px;">
+        <h2>
+            <div class="logo" style="margin-right:-80px;">
+                <img src="~/Content/Images/logo.png" alt="logo" width="70px" height="70px">
+                <h4 style="margin-top:-50px;margin-left:50px;">My Show</h4>
+            </div>
+        </h2>
+        <div class="tag">
+            <a href="/index/userhome" tex>Home</a>
+
+            <a href="/index/bookingconformation">Book now</a>
+            <a href="/index/UserViewbooking">Booked movies</a>
+
+            <a href="/index/Logout" tex>logout</a>
+            <a href="/index/userprofile">@ViewBag.Username</a>
+
+        </div>
+    </header>
+    <table>
+        @{
+            int counter = 1;
+        }
+
+        <tr>
+            <td>
+
+
+
+                @{
+                    foreach (System.Data.DataRow dd in ViewBag.book.Rows)
+                    {
+                        int jobId = Convert.ToInt32(dd["movieid"]);
+
+                        
+
+
+                                <div class="cll" style="display:inline-block;margin-left:15px; margin-top:20px;">
+                                    @{
+                                        int id = Convert.ToInt32(dd["movieid"]);
+                                        int movie = 0;
+                                        string movie_name = "Unknown";
+                                        string description = "Unknown";
+                                        string movie_image = "Unknown";
+                                        string streaming_date = "Unknown";
+                                        string genre = "Unknown";
+
+
+                                        foreach (System.Data.DataRow booked in ViewBag.allmovie.Rows)
+                                        {
+                                            if (Convert.ToInt32(booked["id"]) == id)
+                                            {
+                                                movie_name = booked["movie_name"].ToString();
+                                                description = booked["description"].ToString();
+                                                movie_image = booked["movie_image"].ToString();
+                                                streaming_date = booked["streaming_date"].ToString();
+                                                genre = booked["genre"].ToString();
+                                                movie = Convert.ToInt32(booked["id"]);
+
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    <table style="margin-left:30px;">
+                                        <td><img src="@Url.Content(@movie_image.ToString())" style="width:90px;height:60px;margin-left:-3px" /></td>
+
+
+                                        <tr><td>@movie_name</td></tr>
+                                        <tr><td>@description</td></tr>
+                                        <tr><td>@streaming_date</td></tr>
+                                        <tr><td>@genre</td></tr>
+                                    </table>
+                                    <div class="book">
+                                        <a href="/index/deletebookmovie?id=@dd["bookingid"]" style="margin-left:20px;" class="button">cancel</a>
+                                    </div>
+                               </div>
+
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+
+</body>
+<footer>
+    <p>&copy; 2023 Online Movie Ticket Booking. All rights reserved.</p>
+</footer>
+
+</html>
+
+

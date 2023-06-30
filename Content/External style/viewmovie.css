@@ -142,7 +142,7 @@ th {
     text-transform: uppercase;
 }
 
-tr:nth-child(even) {
+tr {
     background-color: #05A68E;
 }
 .sidenav {

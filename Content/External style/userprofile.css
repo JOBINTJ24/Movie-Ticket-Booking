@@ -9,13 +9,11 @@ body {
 /* Style the header */
 header {
     background-color: #545458;
-    ;
-    padding: 7px;
+    padding: 8px;
     text-align: center;
     font-size: 20px;
     color: white;
-   
-    
+    margin-bottom: 100px;
 }
 
     header h2 {
@@ -39,10 +37,11 @@ img {
 footer {
     background-color: #545458;
     ;
-    padding: 30px;
+    padding: 800px;
     text-align: center;
     color: white;
-    margin-top:2px;
+    margin-top: 70px;
+    position:fixed;
 }
 
 .tag {
@@ -52,6 +51,19 @@ footer {
 
 .logo {
     margin-left: 50px;
+    text
 }
 
-
+.cll {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    padding: 100px;
+    background-color: #DEDB23;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+   
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}

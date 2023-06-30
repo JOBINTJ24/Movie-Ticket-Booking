@@ -1,25 +1,38 @@
-﻿
-@{
-    ViewBag.Title = "show_data";
+﻿@{
+    Layout = null;
 }
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <title>show data</title>
-   
+    <meta charset="UTF-8">
+    <link href="~/Content/External style/usersview.css" rel="stylesheet" />
+    <title>Admin</title>
 </head>
 <body>
-    <div class="table-responsive">
-        <table class="table table-striped">
-     
+    <header>
+        <div class="logo">
+            <img src="~/Content/Images/logo.png">
+            
+        </div>
+        <h2>Admin</h2>
+    </header>
+    <div class="sidenav">
+        <a href="/Home/adminhome">Home</a>
+        <a href="/index/addmovies">Add Movies</a>
+        <a href="/index/viewmovie">View Movies</a>
+        <a href="/index/show_data">View Customers</a>
+        <a href="/index/adminviewbooking">Booked Movies</a>
+        <a href="/index/Logout">Logout</a>
+    </div>
+    <div class="container">
+        <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>First name</th>
-                    <th> Last name</th>
-                    <th> Date of birth</th>
+                    <th>Last name</th>
+                    <th>Date of birth</th>
                     <th>Gender</th>
                     <th>Phone</th>
                     <th>Email</th>
@@ -27,13 +40,13 @@
                     <th>State</th>
                     <th>City</th>
                     <th>Username</th>
-                    <th>password</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                @{
-                    foreach (System.Data.DataRow dr in ViewBag.customer.Rows)
-                    {
+
+            @{
+                foreach (System.Data.DataRow dr in ViewBag.customer.Rows)
+                {
 
                         <tr>
                             <td>@dr["id"]</td>
@@ -44,17 +57,25 @@
                             <td>@dr["phonenumber"]</td>
                             <td>@dr["email"]</td>
                             <td>@dr["address"]</td>
+                            <td>@dr["state"]</td>
                             <td>@dr["city"]</td>
                             <td>@dr["username"]</td>
-                            <td>@dr["password"]</td>
+
+                            <td>
+                                <a href="/index/deletecustomer?id=@dr["id"]" style="color: #000000; text-decoration: none; font-weight: bold;">Delete</a>
+                            </td>
                         </tr>
-                    }
                 }
-            </tbody>
+            }
         </table>
     </div>
+    </form>
 </body>
-
-
 </html>
+<footer style="margin-top:1px;">
+    <p>copyright@2023</p>
+</footer>
+</body>
+</html>
+
 

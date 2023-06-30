@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+/// registration model in ticket booking ///
+
 namespace ticket_booking_system.Models
 {
     public class customer

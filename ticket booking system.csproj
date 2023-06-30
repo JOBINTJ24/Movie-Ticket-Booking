@@ -126,6 +126,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\booking.cs" />
     <Compile Include="Models\customer.cs" />
     <Compile Include="Models\movies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,9 +151,17 @@
     <Content Include="Content\External style\about.css" />
     <Content Include="Content\External style\addmovie.css" />
     <Content Include="Content\External style\admin.css" />
+    <Content Include="Content\External style\adminviewbookin.css" />
+    <Content Include="Content\External style\bookconformation.css" />
     <Content Include="Content\External style\bookmovie.css" />
     <Content Include="Content\External style\contactinformation.css" />
     <Content Include="Content\External style\index.css" />
+    <Content Include="Content\External style\js\addmovies.js" />
+    <Content Include="Content\External style\js\script.js" />
+    <Content Include="Content\External style\js\signup.js" />
+    <Content Include="Content\External style\userbookedmovies.css" />
+    <Content Include="Content\External style\userprofile.css" />
+    <Content Include="Content\External style\usersview.css" />
     <Content Include="Content\External style\viewmovie.css" />
     <Content Include="Content\Images\119738.jpg" />
     <Content Include="Content\Images\2.png" />
@@ -161,6 +170,8 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\6.jpg" />
     <Content Include="Content\Images\10.jpg" />
+    <Content Include="Content\Images\user.png" />
+    <Content Include="Content\Images\userimage.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -204,8 +215,11 @@
     <Content Include="Views\index\updatemovie.cshtml" />
     <Content Include="Views\index\customerlogin.cshtml" />
     <Content Include="Views\index\userhome.cshtml" />
-    <Content Include="Views\index\bookmovie.cshtml" />
     <Content Include="Views\index\contactinformation.cshtml" />
+    <Content Include="Views\index\userprofile.cshtml" />
+    <Content Include="Views\index\bookingconformation.cshtml" />
+    <Content Include="Views\index\UserViewbooking.cshtml" />
+    <Content Include="Views\index\adminviewbooking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

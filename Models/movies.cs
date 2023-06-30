@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+/// movie adding model ///
+
 namespace ticket_booking_system.Models
 {
     public class movies
-    {
-
-          
+    {       
         public int Id { get; set; }
         public string movie_name { get; set; }
         public string description { get; set; }
